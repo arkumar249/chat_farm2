@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Agricultural Light Theme */
+    --background: 45 20% 98%;
+    --foreground: 120 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 120 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 15% 15%;
+
+    /* Forest Green Primary */
+    --primary: 140 60% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 140 65% 40%;
+
+    /* Warm Earth Secondary */
+    --secondary: 25 25% 88%;
+    --secondary-foreground: 120 15% 15%;
+
+    /* Soft Neutral Muted */
+    --muted: 45 15% 92%;
+    --muted-foreground: 120 8% 45%;
+
+    /* Golden Harvest Accent */
+    --accent: 45 85% 65%;
+    --accent-foreground: 120 15% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 45 15% 88%;
+    --input: 45 15% 88%;
+    --ring: 140 60% 35%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Agricultural Dark Theme */
+    --background: 120 20% 8%;
+    --foreground: 45 25% 88%;
+
+    --card: 120 15% 12%;
+    --card-foreground: 45 25% 88%;
+
+    --popover: 120 15% 12%;
+    --popover-foreground: 45 25% 88%;
+
+    /* Bright Forest Green for Dark */
+    --primary: 140 50% 55%;
+    --primary-foreground: 120 20% 8%;
+    --primary-hover: 140 55% 60%;
+
+    /* Dark Earth Secondary */
+    --secondary: 25 15% 18%;
+    --secondary-foreground: 45 25% 88%;
+
+    /* Dark Muted */
+    --muted: 120 10% 15%;
+    --muted-foreground: 45 15% 65%;
+
+    /* Golden Accent for Dark */
+    --accent: 45 75% 70%;
+    --accent-foreground: 120 20% 8%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 45 25% 88%;
+
+    --border: 120 10% 20%;
+    --input: 120 10% 20%;
+    --ring: 140 50% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+@layer components {
+  /* Chat message animations */
+  .message-fade-in {
+    @apply animate-[fadeIn_0.3s_ease-out];
+  }
+  
+  .typing-indicator {
+    @apply animate-pulse;
+  }
+  
+  /* Smooth hover effects */
+  .interactive-hover {
+    @apply transition-all duration-200 hover:scale-105;
+  }
+}
+
+@layer utilities {
+  /* Agricultural gradient patterns */
+  .bg-field-gradient {
+    background: linear-gradient(135deg, hsl(var(--accent)/0.1), hsl(var(--primary)/0.05));
+  }
+  
+  .bg-earth-gradient {
+    background: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)/0.5));
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
